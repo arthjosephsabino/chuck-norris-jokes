@@ -1,10 +1,6 @@
-import "dotenv/config"; 
-import express from "express";
 import env from './util/validateEnv'
-const app = express();
-
+import app from './app';
 const port = env.PORT;
-
 app.get('/', (req, res) => {
   res.send('Hello world')
 })
