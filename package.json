@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@types/apicache": "^1.6.6"
+  }
+}

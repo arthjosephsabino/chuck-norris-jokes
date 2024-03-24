@@ -1,25 +1,18 @@
 import { RequestHandler } from "express";
-import https from "node:https";
 import env from "../util/validateEnv";
+import { getRequest } from "./request";
 
 export const getRandomJoke: RequestHandler = async (req, res, next) => {
-  const { category } = req.body;
-  let url = `${env.API_URL}/jokes/random`;
+  const { category } = req.params;
+  let url = `${env.API_URL}/random`;
   if (category) {
     url = `${url}?category=${category}`;
   }
-  const request = https.get(url, (response) => {
-    let data = "";
-    response.on("data", (chunk) => {
-      data = data + chunk.toString();
-    });
-    response.on("end", () => {
-      const body = JSON.parse(data);
-      res.status(200).json(body);
-    });
-  });
-  request.on("error", (error) => {
-    next(error);
-  });
-  request.end();
+  getRequest(url, res, next);
+};
+
+export const getJokesBySearch: RequestHandler = async (req, res, next) => {
+  const { query } = req.params;
+  const url = `${env.API_URL}/search?query=${query}`;
+  getRequest(url, res, next);
 };
