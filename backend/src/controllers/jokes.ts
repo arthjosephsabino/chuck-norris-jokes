@@ -12,7 +12,7 @@ export const getRandomJoke: RequestHandler = async (req, res, next) => {
 };
 
 export const getJokesBySearch: RequestHandler = async (req, res, next) => {
-  const { query } = req.params;
+  const { query } = req.query;
   const url = `${env.API_URL}/search?query=${query}`;
   getRequest(url, res, next);
 };
