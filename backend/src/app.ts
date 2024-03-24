@@ -1,11 +1,11 @@
-import "dotenv/config"; 
 import express from "express";
-import { json } from "body-parser";
 import { errorHandler } from "./middlewares/errors";
+import jokesRoutes from './routes/jokes';
 
 const app = express();
-app.use(json());
+app.use(express.json());
 //routes here
+app.use('/api/jokes', jokesRoutes)
 app.use(errorHandler);
 
 export default app
