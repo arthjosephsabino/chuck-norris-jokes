@@ -3,6 +3,7 @@
   --secondary: #fff;
   --default-radius: 5px;
   --secondary-hover: #839fca;
+  --error: #f44336;
 }
 
 * {
@@ -32,7 +33,7 @@
   border-color: var(--primary);
   text-decoration: underline;
 }
-select {
+select, input {
   width: 100%;
   padding: 10px 20px;
   border-radius: var(--default-radius);
@@ -41,4 +42,12 @@ select {
 label {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.joke-container {
+  margin: 1rem 0;
+}
+
+.joke-container > h2 {
+  margin-bottom: 1rem;
 }

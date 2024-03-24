@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./app.css";
-import JokesByCategory from "./components/tabs/jokes-by-category";
+import JokesByCategory from "./components/tabs/joke-by-category";
 import JokesByFreeText from "./components/tabs/jokes-by-free-text";
 import TabHeader from "./components/tabs/tab-header";
 import { ITabKeys } from "./types/tab";
@@ -12,10 +12,12 @@ function App() {
   };
   return (
     <div className="app-layout">
-      <h1 className="app-header">Chuck Norris joke</h1>
-      <TabHeader currentTab={tab} onTabClick={handleTabClick} />
-      {tab === "CATEGORY" ? <JokesByCategory /> : null}
-      {tab === "FREE_TEXT" ? <JokesByFreeText /> : null}
+      <div className="content-layout">
+        <h1 className="app-header">Chuck Norris joke</h1>
+        <TabHeader currentTab={tab} onTabClick={handleTabClick} />
+        {tab === "CATEGORY" ? <JokesByCategory /> : null}
+        {tab === "FREE_TEXT" ? <JokesByFreeText /> : null}
+      </div>
     </div>
   );
 }

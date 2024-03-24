@@ -3,9 +3,9 @@ interface ILoader {
   isLoading: boolean;
 }
 export default function Loader({ isLoading }: ILoader) {
-  return (
+  return isLoading ? (
     <div className="backdrop">
       <div className="loader" />
     </div>
-  );
+  ) : null;
 }

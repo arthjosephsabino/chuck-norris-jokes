@@ -1,7 +1,6 @@
 .app-layout {
   height: 100vh;
   width: 100%;
-  max-width: 768px;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -9,8 +8,38 @@
   padding: 4rem 1rem;
 }
 
+.content-layout {
+  max-width: none;
+  width: 100%;
+}
+
 .app-header {
   text-align: center;
   text-decoration: underline;
   font-size: 32px;
+}
+
+
+@media only screen and (min-width: 640px) {
+  .content-layout {
+    max-width: 640px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .content-layout {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .content-layout {
+    max-width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .content-layout {
+    max-width: 1280px;
+  }
 }

@@ -1,8 +1,11 @@
-export default function Alert() {
-  return (
+interface IAlert {
+  message: string;
+}
+export default function Alert({ message }: IAlert) {
+  return message ? (
     <div className="alert">
       <span className="close-btn">&times;</span>
-      <strong>Alert:</strong> This is an alert message!
+      <span>{message}</span>
     </div>
-  );
+  ) : null;
 }

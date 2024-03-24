@@ -2,9 +2,12 @@ import { Joke } from "../../types/joke";
 import { formatDate } from "../../util/format";
 import "./joke-item.css";
 interface IJokeItem {
-  joke: Joke;
+  joke: Joke | null;
 }
 export function JokeItem({ joke }: IJokeItem) {
+  if (!joke) {
+    return null;
+  }
   return (
     <div className="joke-item">
       <span className="created-at">{formatDate(joke.created_at)}</span>
