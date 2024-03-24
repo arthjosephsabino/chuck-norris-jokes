@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/apicache": "^1.6.6",
     "apicache": "^1.6.3",
     "dotenv": "^16.4.5",
     "envalid": "^8.0.0",
