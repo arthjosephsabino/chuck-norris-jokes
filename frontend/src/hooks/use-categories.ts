@@ -10,8 +10,12 @@ export function useCategories() {
         setIsLoading(true);
         const res = await fetch("/api/categories");
         const resJson = await res.json();
-        const data = resJson.data;
-        setCategories(data);
+        if (res.ok) {
+          const data = resJson.data;
+          setCategories(data);
+        } else {
+          throw new Error(resJson.errors[0].message);
+        }
       } catch (error: unknown) {
         setErrMessage((error as Error).message);
       } finally {

@@ -7,3 +7,8 @@ export type JokesReponse = {
   created_at: string;
   updated_at: string;
 };
+
+export type SearchJokeResponse = {
+  total: number;
+  result: JokesReponse[];
+};

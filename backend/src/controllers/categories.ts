@@ -1,5 +1,3 @@
-//https://api.chucknorris.io/jokes/categories
-
 import { RequestHandler } from "express";
 import env from "../util/validateEnv";
 import { getRequest } from "./request";

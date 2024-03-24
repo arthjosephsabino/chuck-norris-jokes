@@ -1,20 +1,8 @@
 .alert {
   padding: 20px;
-  background-color: var(--error); /* Red */
+  background-color: var(--error);
   color: var(--secondary);
   position: relative;
-}
-
-/* Close button */
-.close-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-/* Close button hover effect */
-.close-btn:hover {
-  color: black;
+  border-radius: 5px;
+  margin: 0.25rem 0;
 }

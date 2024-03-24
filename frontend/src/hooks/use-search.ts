@@ -1,28 +1,24 @@
 import { useState } from "react";
 import { Joke } from "../types/joke";
 
-export function useJokeByCategory() {
+export function useSearch() {
   const [isLoading, setIsLoading] = useState(false);
+  const [jokes, setJokes] = useState<Joke[]>([]);
   const [errMessage, setErrMessage] = useState("");
-  const [joke, setJoke] = useState<Joke | null>(null);
-
-  const fetchJokeByCategory = async (category: string) => {
+  const [total, setTotal] = useState(0);
+  const fetchJokes = async (query: string, page: number) => {
     try {
       setIsLoading(true);
-      let url = "/api/jokes/random";
-      if (category) {
-        url = `${url}?category=${category}`;
-      }
+      const url = `/api/jokes/search?query=${query}&page=${page}&limit=10`;
       const res = await fetch(url);
       const resJson = await res.json();
-
       if (res.ok) {
         const data = resJson.data;
-        setJoke(data);
+        setJokes(data.result);
+        setTotal(data.total);
       } else {
         throw new Error(resJson.errors[0].message);
       }
-      
     } catch (error: unknown) {
       setErrMessage((error as Error).message);
     } finally {
@@ -30,5 +26,5 @@ export function useJokeByCategory() {
     }
   };
 
-  return { isLoading, joke, errMessage, fetchJokeByCategory };
+  return { isLoading, errMessage, total, jokes, fetchJokes };
 }
