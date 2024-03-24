@@ -12,7 +12,7 @@ export const getRequest = (url: string, res: Response, next: NextFunction) => {
     });
   });
   request.on("error", (error) => {
-    next(error);
+    console.log(error);
   });
   request.end();
 };
