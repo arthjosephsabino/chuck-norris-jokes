@@ -1,4 +1,34 @@
 
+# Chuck Norris Joke
+
+An application which pull Chuck Norris' jokes from https://api.chucknorris.io
+
+## API Reference
+
+#### Get random joke
+```http
+  GET /api/categories
+```
+
+```http
+  GET /api/jokes/random
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `category`| `string` | Joke category              |
+
+```http
+  GET /api/jokes/search
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `query` | `string` | **Required**. Search string |
+| `page` | `string` | **Required**. Page number |
+| `limit` | `string` | Default `10` |
+
+
 ## Deployment
 
 To deploy this project run
