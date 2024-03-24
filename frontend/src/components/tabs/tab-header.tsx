@@ -1,5 +1,6 @@
 import { ITabKeys } from "../../types/tab";
 import { TABS } from "../../util/consts";
+import "./tab-header.css";
 
 interface ITabHeader {
   currentTab: ITabKeys;
@@ -7,12 +8,11 @@ interface ITabHeader {
 }
 export default function TabHeader({ currentTab, onTabClick }: ITabHeader) {
   return (
-    <div>
+    <div className="tab-layout">
       {Object.keys(TABS).map((key) => (
         <button
-          style={{
-            color: currentTab === key ? "red" : "blue",
-          }}
+          key={key}
+          className={`btn tab ${key === currentTab ? "active" : ""}`}
           onClick={() => {
             onTabClick(key as ITabKeys);
           }}

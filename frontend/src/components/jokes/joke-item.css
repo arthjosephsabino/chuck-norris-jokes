@@ -1,0 +1,28 @@
+.joke-item {
+  border: 2px solid var(--primary);
+  border-radius: var(--default-radius);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.joke-item > .created-at {
+  font-weight: 600;
+}
+
+.joke-item > .content {
+  color: var(--secondary);
+  margin: 2rem 0;
+}
+
+.joke-item > .link {
+  color: var(--secondary);
+  font-weight: 700;
+  align-self: end;
+}
+
+.joke-item > .link:hover {
+  color: var(--secondary-hover);
+}

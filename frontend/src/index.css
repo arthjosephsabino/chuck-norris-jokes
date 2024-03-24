@@ -1,0 +1,44 @@
+:root {
+  --primary: #3b5998;
+  --secondary: #fff;
+  --default-radius: 5px;
+  --secondary-hover: #839fca;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--secondary);
+  background-color: var(--primary);
+  border: 2px solid transparent;
+  border-radius: var(--default-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover, .btn.active{
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-color: var(--primary);
+  text-decoration: underline;
+}
+select {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: var(--default-radius);
+}
+
+label {
+  font-weight: bold;
+  text-transform: uppercase;
+}

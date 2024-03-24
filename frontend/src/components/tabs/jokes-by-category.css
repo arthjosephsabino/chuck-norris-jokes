@@ -1,0 +1,19 @@
+.category-filter {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.joke-container {
+  margin: 1rem 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .category-filter {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+  }
+}

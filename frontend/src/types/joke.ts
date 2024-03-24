@@ -3,4 +3,7 @@ export type Joke = {
   id: string;
   url: string;
   value: string;
+  categories: string[];
+  created_at: string;
+  updated_at: string;
 };
