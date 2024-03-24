@@ -1,0 +1,61 @@
+2.	Please create a function which counts a character occurrence in a repeated string. 
+On a given integer N, a lowercase string S and a search character C. 
+The S string is repeated until reaches the length of N letters. 
+The assignment is to find the number of occurrences of C in the final string. 
+
+Write a function that receives the string S, the N letters to be repeated and returns the occurrences of the given C character. 
+The code must be complied successfully. 
+Example:
+S = "abcd"
+N = 11
+C = ‘a’
+Final String = "abcdabcdabc"
+Result: 3 occurrences
+
+
+answer:
+
+function countCharOccurrence(S, N, C) {
+  const sReps = Math.ceil(N / S.length);
+  const str = S.repeat(sReps);
+  const count = (str.match(new RegExp(C, "g")) || []).length;
+  return count;
+}
+
+3.) SQL Query
+
+answer:
+
+SELECT 
+    c.CampaignName AS "Campaign Name",
+    COUNT(DISTINCT r.RoundID) AS "Rounds Count",
+    COUNT(s.SegmentID) AS "Segments Count"
+FROM 
+    Campaigns c
+LEFT JOIN 
+    Rounds r ON c.CampaignID = r.CampaignID
+LEFT JOIN 
+    Segments s ON r.RoundID = s.RoundID
+WHERE 
+    c.CampaignName LIKE 'MyTestCampaign%'
+GROUP BY 
+    c.CampaignName
+HAVING 
+    COUNT(DISTINCT r.RoundID) >= 3
+ORDER BY 
+    "Rounds Count" DESC
+LIMIT 10;
+
+4.) summation
+
+answer:
+
+function summation(...args) {
+  let sum = 0;
+  for (let i = 0; i < args.length; i++) {
+      if (!isNaN(args[i])) {
+          sum += args[i];
+      }
+  }
+  return sum;
+}
